@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getAll } from '../redux/states/actions';
+import StateList from '../components/stateList';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -9,7 +10,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      Home
+      <StateList />
     </div>
   );
 };
