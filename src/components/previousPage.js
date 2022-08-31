@@ -1,26 +1,24 @@
 import { NavLink } from 'react-router-dom';
-import { FaRegArrowAltCircleRight } from 'react-icons/fa';
+import { FaRegArrowAltCircleLeft } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-const ListItem = (props) => {
-  const { name, code, id } = props;
+const PreviousPage = (props) => {
+  const { path, name } = props;
   return (
     <NavLink
-      to={`/details/${code}-${id}`}
-      className="card m-1 bg-app text-end d-flex flex-column justify-content-between p-1"
-      style={{ height: '100px' }}
+      to={path}
+      className="d-flex text-white bg-app px-2 pt-1 pb-2"
     >
-      <div className="text-end">
-        <FaRegArrowAltCircleRight/>
+      <div className="text-start display-6 ">
+        <FaRegArrowAltCircleLeft />
       </div>
-      <span className="">{name}</span>
+      <div className="mt-2 ml-2">{name.toUpperCase()}</div>
     </NavLink>
   );
 };
 
-ListItem.propTypes = {
+PreviousPage.propTypes = {
+  path: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  code: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
 };
-export default ListItem;
+export default PreviousPage;

@@ -1,1 +1,1 @@
-# covid-tracking
+# aoe2-details
