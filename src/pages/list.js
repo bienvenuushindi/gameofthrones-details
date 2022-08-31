@@ -1,27 +1,27 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router';
 import { useEffect } from 'react';
-import StateItem from './stateItem';
-import { getAll } from '../redux/states/actions';
+import ListItem from './listItem';
+import { categoriesActions } from '../provider';
 
-const StateList = () => {
-  const states = useSelector((state) => state.states);
+const List = () => {
+  const { slug } = useParams();
   const dispatch = useDispatch();
-  useEffect(() => {
-    if (states.length === 0) dispatch(getAll());
-  }, []);
-  console.log(states);
+  const states = useSelector((state) => state[slug]);
   const list = states.map((item) => (
-    <StateItem
-      key={item.state_code}
-      code={item.state_code}
+    <ListItem
+      key={item.id}
       name={item.name}
     />
   ));
+  useEffect(() => {
+    if (states.length === 0) dispatch(categoriesActions[slug]);
+  });
   return (
     <div>
       <div className="row">
         <div className="col-6 bg-white ">Logo</div>
-        <div className="col-6 ">US Covid Data</div>
+        <div className="col-6 ">{slug}</div>
       </div>
       <nav>
         <div className="row ">
@@ -31,6 +31,5 @@ const StateList = () => {
     </div>
   );
 };
-
-export default StateList;
+export default List;
 // `
