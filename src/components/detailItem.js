@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
+import { appColors } from '../provider';
 
 const DetailItem = (props) => {
   const { name, value, index } = props;
-  console.log(typeof value);
   const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
   const extractValue = (value) => {
     if (typeof value !== 'object') return value;
@@ -22,7 +22,7 @@ const DetailItem = (props) => {
   return (
     <div
       className="col-12 py-2"
-      style={(index % 2 === 0) ? { backgroundColor: '#383877' } : { backgroundColor: '#31347a' }}
+      style={(index % 2 === 0) ? appColors.bgTwo : appColors.bgOne}
     >
       <div className="mx-0 px-0 row">
         {name && <div className="h6 col-5" style={{ fontWeight: 600 }}>{capitalizeFirstLetter(name)}</div>}

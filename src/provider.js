@@ -10,3 +10,18 @@ export const categoriesActions = {
   units: getUnits(),
   technologies: getTechnologies(),
 };
+export const appColors = {
+  bgOne: {
+    backgroundColor: '#31347a',
+  },
+  bgTwo: {
+    backgroundColor: '#383877',
+  },
+};
+
+export const properOutput = (type, input) => {
+  if (input === undefined) {
+    return 'Not Found';
+  }
+  return input;
+};

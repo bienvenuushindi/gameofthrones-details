@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Logo from '../logo.png';
 
-const Header = (props) => {
+const ContentHeader = (props) => {
   const {
     tite,
   } = props;
@@ -18,7 +18,7 @@ const Header = (props) => {
   );
 };
 
-Header.propTypes = {
+ContentHeader.propTypes = {
   tite: PropTypes.string.isRequired,
 };
-export default Header;
+export default ContentHeader;

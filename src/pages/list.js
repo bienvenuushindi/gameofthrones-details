@@ -3,8 +3,8 @@ import { useParams } from 'react-router';
 import { useEffect } from 'react';
 import ListItem from '../components/listItem';
 import { categoriesActions } from '../provider';
-import PreviousPage from '../components/previousPage';
-import Header from '../components/header';
+import ContentHeader from '../components/contentHeader';
+import TopBar from '../components/topBar';
 
 const List = () => {
   const { slug } = useParams();
@@ -21,14 +21,14 @@ const List = () => {
   ));
   useEffect(() => {
     if (states.length === 0) dispatch(categoriesActions[slug]);
-  });
+  }, []);
   return (
     <div>
-      <PreviousPage path="/" name="Home" />
-      <Header tite={slug} />
+      <TopBar title={slug.toUpperCase()} path="/" name="Home" />
+      <ContentHeader tite={slug} />
       <nav>
-        <div className="row mx-0">
-          {list}
+        <div className="row mx-0 text-center">
+          {states.length === 0 ? <div className="text-center">Loading ...</div> : list }
         </div>
       </nav>
     </div>
