@@ -11,7 +11,6 @@ const List = () => {
   const dispatch = useDispatch();
   const states = useSelector((state) => state[slug]) || [];
   // const [loading, setLoading] = useState(true);
-  console.log(states);
   const list = states.map((item, index) => (
     <ListItem
       key={`${slug}-${item.id}`}
