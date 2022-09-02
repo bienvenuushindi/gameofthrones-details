@@ -9,7 +9,7 @@ import TopBar from '../components/topBar';
 const List = () => {
   const { slug = 'units' } = useParams();
   const dispatch = useDispatch();
-  const states = useSelector((state) => state[slug]) || [];
+  const states = (useSelector((state) => state[slug]) || []);
   const list = states.map((item, index) => (
     <ListItem
       key={`${slug}-${item.id}`}
@@ -28,7 +28,7 @@ const List = () => {
       <ContentHeader tite={slug} />
       <nav>
         <div className="row mx-0 text-center">
-          {states.length === 0 ? <div className="text-center">Loading ...</div> : list }
+          {states.length === 0 ? <div className="text-center">Loading ...</div> : list}
         </div>
       </nav>
     </div>
