@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import ListItem from '../components/listItem';
 import { categoriesActions } from '../provider';
 import ContentHeader from '../components/contentHeader';
@@ -10,7 +10,7 @@ const List = () => {
   const { slug = 'units' } = useParams();
   const dispatch = useDispatch();
   const states = useSelector((state) => state[slug]) || [];
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const list = states.map((item, index) => (
     <ListItem
       key={`${slug}-${item.id}`}
@@ -22,7 +22,7 @@ const List = () => {
   ));
   useEffect(() => {
     if (states.length === 0) dispatch(categoriesActions[slug]);
-    setLoading(false);
+    // setLoading(false);
   }, []);
   return (
     <div>
@@ -30,7 +30,7 @@ const List = () => {
       <ContentHeader tite={slug} />
       <nav>
         <div className="row mx-0 text-center">
-          {loading ? <div className="text-center">Loading ...</div> : list }
+          {list }
         </div>
       </nav>
     </div>
