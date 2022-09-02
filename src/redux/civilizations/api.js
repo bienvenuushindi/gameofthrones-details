@@ -9,5 +9,6 @@ export default async function fetchData() {
   }).then((res) => res.json()).then((data) => {
     result = data.civilizations;
   });
+  console.log(result)
   return { data: result };
 }
