@@ -1,7 +1,7 @@
-// const dataUrl = 'https://age-of-empires-2-api.herokuapp.com/api/v1/units';
+const dataUrl = 'https://age-of-empires-2-api.herokuapp.com/api/v1/units';
 export default async function fetchData() {
   let result = [];
-  await fetch('api/v1/units', {
+  await fetch(dataUrl, {
     mode: 'no-cors',
     headers: {
       'Content-Type': 'application/json',
