@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { FaRegArrowAltCircleRight } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-const Listitlem = (props) => {
+const ListItem = (props) => {
   const {
     name, code, id, index,
   } = props;
@@ -25,10 +25,10 @@ const Listitlem = (props) => {
   );
 };
 
-Listitlem.propTypes = {
+ListItem.propTypes = {
   name: PropTypes.string.isRequired,
   code: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
 };
-export default Listitlem;
+export default ListItem;

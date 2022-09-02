@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
-import Listitlem from '../components/listitlem';
+import ListItem from '../components/listItem';
 import { homeActions } from '../provider';
 import ContentHeader from '../components/contentHeader';
 import TopBar from '../components/topBar';
@@ -11,7 +11,7 @@ const List = () => {
   const dispatch = useDispatch();
   const states = (useSelector((state) => state[slug]) || []);
   const list = states.map((item, index) => (
-    <Listitlem
+    <ListItem
       key={`${slug}-${item.slug}`}
       code={slug}
       id={item.slug}
