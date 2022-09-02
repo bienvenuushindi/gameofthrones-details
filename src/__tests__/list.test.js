@@ -6,13 +6,14 @@ import { Provider } from 'react-redux';
 import List from '../pages/list';
 import store from '../redux/configureStore';
 
-it('Test List Page has Details', () => {
+it('Should match snapshot', () => {
   const tree = render(
     <Provider store={store}>
       <BrowserRouter>
-        <List/>
+        <List />
       </BrowserRouter>
     </Provider>,
   );
+
   expect(tree).toMatchSnapshot();
 });
