@@ -7,9 +7,9 @@ import ContentHeader from '../components/contentHeader';
 import TopBar from '../components/topBar';
 
 const List = () => {
-  const { slug } = useParams();
+  const { slug = 'units' } = useParams();
   const dispatch = useDispatch();
-  const states = useSelector((state) => state[slug]);
+  const states = useSelector((state) => state[slug]) || [];
   const list = states.map((item, index) => (
     <ListItem
       key={`${slug}-${item.id}`}

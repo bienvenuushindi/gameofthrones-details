@@ -26,7 +26,7 @@ const DetailItem = (props) => {
     >
       <div className="mx-0 px-0 row">
         {name && <div className="h6 col-5" style={{ fontWeight: 600 }}>{capitalizeFirstLetter(name)}</div>}
-        <div className="col-7">
+        <div className={`${(name === null) ? 'col-12' : 'col-7'}`}>
           {extractValue(value)}
         </div>
       </div>
