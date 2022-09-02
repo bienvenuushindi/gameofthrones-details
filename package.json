@@ -2,6 +2,7 @@
   "name": "aoe2-details",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://age-of-empires-2-api.herokuapp.com/",
   "homepage": ".",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
