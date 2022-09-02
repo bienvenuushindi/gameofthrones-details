@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
-import ListItem from '../components/listItem';
+import Listitlem from '../components/listitlem';
 import { homeActions } from '../provider';
 import ContentHeader from '../components/contentHeader';
 import TopBar from '../components/topBar';
@@ -11,7 +11,7 @@ const List = () => {
   const dispatch = useDispatch();
   const states = (useSelector((state) => state[slug]) || []);
   const list = states.map((item, index) => (
-    <ListItem
+    <Listitlem
       key={`${slug}-${item.slug}`}
       code={slug}
       id={item.slug}
@@ -25,7 +25,7 @@ const List = () => {
   return (
     <div>
       <TopBar title={slug.toUpperCase()} path="/" name="Home" />
-      <ContentHeader tite={slug} />
+      <ContentHeader title={slug} />
       <nav>
         <div className="row mx-0 text-center">
           {states.length === 0 ? <div className="text-center">Loading ...</div> : list}

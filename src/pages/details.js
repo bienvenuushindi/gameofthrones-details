@@ -13,7 +13,7 @@ const Details = () => {
   return (
     <div>
       <TopBar title={`${details.name}`} path={`/${category}`} name={category} />
-      <ContentHeader tite={category} />
+      <ContentHeader title={category} />
       <div className="row mx-0">
         <DetailItem
           name={'Details about'.toUpperCase()}

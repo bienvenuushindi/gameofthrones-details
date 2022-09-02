@@ -3,7 +3,7 @@ import Logo from '../logo.png';
 
 const ContentHeader = (props) => {
   const {
-    tite,
+    title,
   } = props;
   const itemClassList = 'd-flex text-center  m-0 align-items-center';
   return (
@@ -12,13 +12,13 @@ const ContentHeader = (props) => {
         <img src={Logo} alt="Game of thrones logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
       </div>
       <div className={`col-8 display-6 d-flex justify-content-center my-auto  h-100 box ${itemClassList}`} style={{ fontWeight: '700' }}>
-        {`${tite || 'Empty Item'}`.toUpperCase()}
+        {`${title || 'Empty Item'}`.toUpperCase()}
       </div>
     </div>
   );
 };
 
 ContentHeader.propTypes = {
-  tite: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 export default ContentHeader;
