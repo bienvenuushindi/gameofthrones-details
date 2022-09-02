@@ -18,7 +18,7 @@
 
 ## Live Demo
 
-- [Live Demo Link](https://aoe2-details.netlify.app/)
+- [Live Demo Link](https://gameofthrones-details.netlify.app/)
 
 ### Click here for Video Link
 
