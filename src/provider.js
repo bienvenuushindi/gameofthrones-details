@@ -18,10 +18,3 @@ export const appColors = {
     backgroundColor: '#383877',
   },
 };
-
-export const properOutput = (type, input) => {
-  if (input === undefined) {
-    return 'Not Found';
-  }
-  return input;
-};

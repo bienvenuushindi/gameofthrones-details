@@ -7,13 +7,13 @@ const DetailItem = (props) => {
   const extractValue = (value) => {
     if (typeof value !== 'object') return value;
     if (Array.isArray(value)) {
-      return value.length > 1 ? value.map((item, id) => (
+      return (value.length > 1 ? value.map((item, id) => (
         <DetailItem
           key={`${item}-${index}`}
           value={item}
           index={id}
         />
-      )) : value;
+      )) : value);
     }
     return Object.entries(value).map((detail, id) => (
       <DetailItem key={`${detail[0]}-${index}`} name={detail[0]} value={detail[1]} index={id} />
