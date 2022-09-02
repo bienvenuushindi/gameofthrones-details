@@ -96,7 +96,7 @@ Object {
           >
             <img
               alt="Game of thrones logo"
-              src="logo.png"
+              src="/logo.png"
               style="max-width: 100%; max-height: 100%;"
             />
           </div>
@@ -213,7 +213,7 @@ Object {
         >
           <img
             alt="Game of thrones logo"
-            src="logo.png"
+            src="/logo.png"
             style="max-width: 100%; max-height: 100%;"
           />
         </div>
