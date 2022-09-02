@@ -5,19 +5,21 @@ const DetailItem = (props) => {
   const { name, value, index } = props;
   const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
   const extractValue = (value) => {
-    if (typeof value !== 'object') return value;
     if (Array.isArray(value)) {
-      return (value.length > 1 ? value.map((item, id) => (
+      return value.map((item, id) => (
         <DetailItem
           key={`${item}-${index}`}
           value={item}
           index={id}
         />
-      )) : value);
+      ));
     }
-    return Object.entries(value).map((detail, id) => (
-      <DetailItem key={`${detail[0]}-${index}`} name={detail[0]} value={detail[1]} index={id} />
-    ));
+    if (typeof value === 'object') {
+      return Object.entries(value).map((detail, id) => (
+        detail[0] === 'slug' ? <span /> : <DetailItem key={`${detail[0]}-${index}`} value={detail[1]} index={id} />
+      ));
+    }
+    return value;
   };
   return (
     <div
@@ -38,6 +40,8 @@ DetailItem.propTypes = {
   name: PropTypes.string,
   index: PropTypes.number.isRequired,
   value: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,

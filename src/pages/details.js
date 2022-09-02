@@ -8,10 +8,8 @@ const Details = () => {
   const { slug = 'Item Not Found-0' } = useParams();
   const [category, index] = slug.split('-');
   const states = useSelector((state) => state[category]) || [];
-  const details = states.find((item) => item.id === parseInt(index, 10)) || { name: 'No item Found' };
-  const list = Object.entries(details).map((detail, id) => (
-    <DetailItem key={`${detail[0]}-${index}`} name={detail[0]} value={detail[1]} index={id} />
-  ));
+  const details = states.find((item) => item.slug === index) || { name: 'No item Found' };
+  const list = Object.entries(details).map((detail, id) => <DetailItem key={`${detail[0]}-${index}`} name={detail[0]} value={detail[1]} index={id} />);
   return (
     <div>
       <TopBar title={`${details.name}`} path={`/${category}`} name={category} />

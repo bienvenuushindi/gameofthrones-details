@@ -9,7 +9,7 @@ const ContentHeader = (props) => {
   return (
     <div className="row mb-4 mx-0" style={{ minHeight: '100px' }}>
       <div className={`col-4 ${itemClassList}`}>
-        <img src={Logo} alt="Age of Empire 2 logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+        <img src={Logo} alt="Game of thrones logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
       </div>
       <div className={`col-8 display-6 d-flex justify-content-center my-auto  h-100 box ${itemClassList}`} style={{ fontWeight: '700' }}>
         {`${tite || 'Empty Item'}`.toUpperCase()}

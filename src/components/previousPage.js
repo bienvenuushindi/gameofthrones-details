@@ -7,12 +7,12 @@ const PreviousPage = (props) => {
   return (
     <NavLink
       to={path}
-      className="d-flex text-white"
+      className="d-flex align-items-center  h-100 text-white"
     >
       <div className="text-start display-6 ">
         <FaRegArrowAltCircleLeft />
       </div>
-      <div className="mt-2 mx-1">{name.toUpperCase()}</div>
+      <div className="mt-1 mx-1 ">{name.toUpperCase()}</div>
     </NavLink>
   );
 };

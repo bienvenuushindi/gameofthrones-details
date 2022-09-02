@@ -1,6 +1,6 @@
 import { FETCH_FULFILLED } from './actions';
 
-const civilizations = (state = [], action = {}) => {
+const houses = (state = [], action = {}) => {
   switch (action.type) {
     case FETCH_FULFILLED: {
       return action.payload.data;
@@ -9,4 +9,4 @@ const civilizations = (state = [], action = {}) => {
   }
 };
 
-export default civilizations;
+export default houses;

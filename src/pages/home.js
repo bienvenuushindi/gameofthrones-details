@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { FaRegArrowAltCircleRight } from 'react-icons/fa';
-import { categories } from '../provider';
+import { actionSources } from '../provider';
+import Logo from '../logo.png';
 
 const Home = () => {
-  const list = categories.map((item) => (
+  const list = actionSources.map((item) => (
     <div key={item} className="col-6">
       <NavLink
         to={`/${item}`}
@@ -20,6 +21,9 @@ const Home = () => {
   ));
   return (
     <div className="d-flex flex-column h-100 justify-content-center">
+      <div className="text-center">
+        <img src={Logo} alt="Game of thrones logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+      </div>
       <h1 className="text-center">{'What Do You Want to Know?'.toUpperCase()}</h1>
       <div className="d-flex row mx-0">
         {list}

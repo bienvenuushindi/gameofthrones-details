@@ -9,17 +9,17 @@ import { Router } from 'react-router';
 import { createMemoryHistory } from 'history';
 import store from '../redux/configureStore';
 import Home from '../pages/home';
-import { categories } from '../provider';
+import { actionSources } from '../provider';
 
 afterEach(cleanup);
 describe('Test HomePage', () => {
-  // const category = categories[0];
+  // const category = actionSources[0];
   it('should have a text  What do you want to know', () => {
     render(<Home />, { wrapper: BrowserRouter });
     const element = screen.getByText(/WHAT DO YOU WANT TO KNOW/i);
     expect(element).toBeInTheDocument();
   });
-  describe.each(categories)('Should list categories %i', (category) => {
+  describe.each(actionSources)('Should list actionSources %i', (category) => {
     it(`Should have the text ${category}`, async () => {
       render(
         <Provider store={store}>

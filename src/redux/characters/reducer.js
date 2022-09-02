@@ -1,6 +1,6 @@
 import { FETCH_FULFILLED } from './actions';
 
-const units = (state = [], action = {}) => {
+const characters = (state = [], action = {}) => {
   switch (action.type) {
     case FETCH_FULFILLED: {
       return action.payload.data;
@@ -9,4 +9,4 @@ const units = (state = [], action = {}) => {
   }
 };
 
-export default units;
+export default characters;

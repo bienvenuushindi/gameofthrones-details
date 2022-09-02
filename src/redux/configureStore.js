@@ -1,12 +1,10 @@
 import { combineReducers, configureStore, applyMiddleware } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
-import units from './units/reducer';
-import civilizations from './civilizations/reducer';
-import technologies from './technologies/reducer';
-import structures from './structures/reducer';
+import characters from './characters/reducer';
+import houses from './houses/reducer';
 
 const rootReducer = combineReducers({
-  units, civilizations, technologies, structures,
+  characters, houses,
 });
 const store = configureStore({
   reducer: rootReducer,
