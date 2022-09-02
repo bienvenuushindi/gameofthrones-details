@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+
+  /* font-family: Lato, serif; */
+  font-family: 'Gill Sans', sans-serif;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
+    monospace;
+}
