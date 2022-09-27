@@ -2,7 +2,7 @@
 
 # Game of thrones houses and characters
 
-> The Game of thrones houses and characters App is a a React, Redux application based on  [this API](https://gameofthronesquotes.xyz/).
+> The Game of thrones houses and characters App is a a React, Redux application based on a free  [API](https://gameofthronesquotes.xyz/) to retrieve some quotes of Game of Thrones!
 
 - In this application I am fetching from the API and Store in the Redux store.
 - This web application is build with react and provides details  about different houses and characters.
